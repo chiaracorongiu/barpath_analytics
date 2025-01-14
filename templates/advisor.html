@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advisor
+{% endblock %}
+
+{% block main %}
+
+<div class="section">
+
+    <h1>Analyze ratios</h1>
+    <form action="/advisor" method="post">
+        <select name="analyze">
+            <option disabled selected value="">Group</option>
+            {% for group in group %}
+                <option value="{{group}}">{{group}}</option>
+            {% endfor %}
+        </select>
+        <button name=button type="submit">Analyze ratios</button>
+    </form>
+</div>
+<div>
+    {% if analyze %}
+    <h2>Analyze {{analyze}}</h2>
+    <p>{{ref}}={{ref_weight}}kg</p>
+    {% for i in range(headers|length) %}
+    <div class="analysis-section">
+        <h3>Analyze {{ headers[i] }}</h3>
+        <p>{{ messages[i]|safe }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+</div>
+{% endblock %}
+

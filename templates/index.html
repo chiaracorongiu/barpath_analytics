@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <div class="section">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Poids</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="section">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Movements</th>
+                    <th>PR (kg)</th>
+                    <th>Objective (kg)</th>
+                    <th>Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for objective in objectives %}
+                    <tr>
+                        <td>{{objective.movement}}</td>
+                        <td>{{objective.max_weight}} </td>
+                        <td>{{'-' if objective.objective_weight == 0 else objective.objective_weight}}</td>
+                        <td class="{{ 'negative' if objective.max_weight - objective.objective_weight < 0 else 'positive' }}">{{'-' if objective.objective_weight == 0 else (objective.max_weight - objective.objective_weight)}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

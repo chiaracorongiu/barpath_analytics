@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Evolution
+{% endblock %}
+
+{% block main %}
+
+        <div class="section">
+            <h2>Display PR evolution</h2>
+            <div class="container">
+                <div class="dropdown-checkbox">
+                    <button>Movement</button>
+                    <div class="dropdown-checkbox-content">
+                        <form action="/evolution" method="post">
+                            {% for movement in movements %}
+                                <div>
+                                    <input type="checkbox" name="movement" value="{{ movement }}">
+                                    <label>{{ movement }}</label>
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="proceed-button">Proceed</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if plot_url %}
+        <h2>Weight Evolution</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Evolution Graph" style="width: 100%; height: auto;">
+    {% else %}
+        <p>{{message}}</p>
+    {% endif %}
+    </div>
+{% endblock %}

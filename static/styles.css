@@ -1,0 +1,98 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+.negative {
+    color: red !important;
+}
+
+.positive {
+    color: green !important;
+}
+.dropdown-checkbox {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-checkbox-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.dropdown-checkbox:hover .dropdown-checkbox-content {
+    display: block;
+}
+
+.checkbox-inline {
+    display: inline-block;
+    margin-right: 10px;
+}
+form {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+label {
+    font-weight: bold;
+}
+input, select, button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+button:hover {
+    background-color: #45a049;
+}
+
+image{
+    width:100%;
+}
+a.btn {
+    /* Specificity ensures only anchor tags with the .btn class are targeted */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}

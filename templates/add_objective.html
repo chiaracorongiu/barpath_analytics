@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add new objective
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+
+        <h2>Add new objective</h2>
+        <form action="/add_objective" method="post">
+            <select name="movement">
+                <option disabled selected value="">Movement</option>
+                {% for movement in movements %}
+                    <option value="{{movement}}">{{movement}}</option>
+                {% endfor %}
+            </select>
+            <input autocomplete="off" autofocus name="weight" placeholder="Kg" type="number" min="1">
+            <button name=button type="submit">Add objective</button>
+        </form>
+
+    </div>
+{% endblock %}
